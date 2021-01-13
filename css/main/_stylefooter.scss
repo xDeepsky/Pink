@@ -1,0 +1,40 @@
+.footer {
+    @media (min-width: $desktop-width) {
+        padding: 0;
+    }
+    padding: 40px 0;
+}
+
+.footer-container {
+    @media (min-width: $tablet-width) {
+        flex-direction: row;
+        align-items: center;
+        min-height: 127px;
+        padding: 40px 20px;
+    }
+    @media (min-width: $desktop-width) {
+        max-width: 1250px;
+        min-height: 197px;
+        margin: 0 auto;
+        padding: 70px 130px 80px;
+    }
+    min-height: 284px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 145px;
+    height: 40px;
+}
+.fb {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.copy {
+    display: flex;
+    flex-direction: column;
+}

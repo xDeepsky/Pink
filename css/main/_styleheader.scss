@@ -1,0 +1,423 @@
+//Viewports
+
+$desktop-width: 1200px;
+$tablet-width: 660px;
+$mobile-width: 318px;
+$PINK: #D22856;
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../../font/OpenSans-Light.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
+    display: none;
+}
+
+.body {
+    min-width: 320px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.back {
+    background-position-y: 252px;
+}
+
+.page-header {
+    @media (max-width: $mobile-width) {
+        background-position-y: 252px;
+    }
+    @media (min-width: $tablet-width) {
+        min-height: 729px;
+        min-width: 660px;
+        background-image: url(../../img/bg-back-tablet@1x.jpg);
+        background-size: 1200px 729px;
+        background-position-x: center;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: $desktop-width) {
+        min-height: 853px;
+        min-width: 1200px;
+        background-image: url(../../img/bg-back-desktop@1x.jpg);
+        background-size: 2560px 853px;
+        background-repeat: no-repeat;
+    }
+    min-height: 733px;
+    background-image: url(../../img/bg-back-mobile@2x.jpg);
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+}
+
+.desktop-topbar {
+    @media (min-width: $desktop-width){
+    position: absolute;
+    height: 110px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.header__logo {
+    @media (min-width: $tablet-width) {
+    padding: 27px 10px 35px 20px;
+    width: 145px; 
+    }
+    @media (min-width: $desktop-width) {
+        left: 130px;
+        width: 147px; 
+    }
+    display: block; 
+    position: relative;
+    padding: 20px;
+    width: 74px;    
+}
+
+.main-logo-mobile {
+    width: 74px; 
+    height: 23px;
+    @media (min-width: 660px) {
+        display: none;
+    }
+}
+
+.main-logo-tablet {
+    width: 145px; 
+    height: 40px;
+    @media (max-width: 659px), (min-width: 1199px) {
+        display: none;
+    }
+}
+
+.main-logo-desktop {
+    width: 147px; 
+    height: 40px;
+    @media (max-width: 1199px) {
+        display: none;
+    }
+}
+
+.main-nav {
+    @media (min-width: $tablet-width) {
+        min-height: 110px;
+    }
+    @media (max-width: $mobile-width){
+        background-color: #283645;
+    }
+    @media (min-width: $desktop-width){
+        position: relative;
+        background-color: transparent;
+    }
+    box-sizing: border-box;
+    min-height: 66px;
+    background-color: rgba(0, 0, 0, 0.3);    
+        &__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+    }
+}
+
+.main-nav__wrapper {        
+    @media (min-width: $desktop-width) {
+        flex-direction: row;
+        align-items: center;
+    }
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    @media (min-width: $desktop-width){
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.site-list {
+    @media (min-width: $desktop-width) {
+        width: 100%;
+        display: flex;
+        margin-left: 321px;
+    }
+}
+
+.main-nav__list a {
+    display: block;
+    padding: 20px 0;
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+        transform: scale(1.1);
+        color: $PINK;
+        text-shadow: 1px 0 2px rgba($color: #ffffff, $alpha: 1.0);
+    }
+}
+
+.site-list__item {
+    @media (min-width: $desktop-width) {
+        margin-right: 79px;
+        text-transform: none;
+    }
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 18px;
+    display: block;
+    border-top: 1px solid #636D79;
+    border-bottom: 1px solid black; 
+}
+
+.main-nav--closed .site-list__item {
+    @media (min-width: $desktop-width) {
+        background-color: transparent;
+        border-top: none;
+        border-bottom: 0;
+    }
+    @media (max-width: $mobile-width){
+        display: block;
+        background-color: #283645;
+    }
+    @media (min-width: $desktop-width) {
+        display: block;
+    }
+    display: block;
+    background-color: #283645;
+    display: none;
+}
+
+.item--active {
+    @media (min-width: $desktop-width) {
+            border-bottom: 3px solid white;
+            pointer-events: none;
+            cursor: default;
+        }
+}
+
+.main-nav__toggle {
+    @media (max-width: $mobile-width){
+        display: none;
+    }
+    @media (min-width: $tablet-width) {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    @media (min-width: $desktop-width){
+        display: none;
+    }
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: 2;
+    display: block;
+    width: 70px;
+    height: 66px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.main-nav--closed .main-nav__toggle::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 50px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: (0 10px 0 0 #ffffff),
+    (0 20px 0 0 #ffffff);
+}
+
+.main-nav--closed .main-nav__toggle:active::before {
+    background-color: fade(#ffffff, 30%);
+    box-shadow: 0 10px 0 0 fade(#000000, 30%),
+    0 20px 0 0 fade(#ffffff, 30%);
+}
+
+.main-nav--opened {
+    @media (min-width: $desktop-width) {
+        display: none;
+    }
+    background-color: #283645;
+}
+
+.main-nav--opened .main-nav__toggle {
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 30px;
+        top: 30px;
+        right: 20px;
+        background-color: #ffffff;
+    }
+    &::before {
+        transform: rotate(45deg);
+    }
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+.hand-iphone__wrapper {
+    @media (min-width: $tablet-width) {
+        display: flex;
+        flex-direction: column;
+        min-height: 619px;
+        min-width: 660px;
+        background-image: url(../../img/iphone-hand-tablet@1x.png);
+        background-repeat: no-repeat;
+        background-size: 660px 545px;
+        background-position: right bottom;
+    }
+    @media (min-width: $desktop-width) {
+        min-height: 645px;
+        min-width: 1050px;
+        margin-top: 98px;
+        background-image: url(../../img/iphone-hand-desktop@1x.png);
+        background-repeat: no-repeat;
+        background-size: auto 645px;
+        background-position: right;
+    }
+}
+
+.hand-iphone{
+    @media (min-width: $tablet-width){
+        background-image: none;
+        min-height: 180px;
+    }
+    min-height: 396px;
+    background-image: url(../../img/iphone-hand-mobile@1x.png);
+    background-repeat: no-repeat;
+    background-position: 0 106px;
+    margin-bottom: -4px;
+}
+
+.hand__slogan--only-mobail {
+    @media (min-width: $tablet-width) {
+        display: none;
+    }
+    font-family: inherit;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    font-size: 24px;
+    margin-top: 29px;
+    margin-bottom: 24px;
+}
+
+.hand__slogan--tabDesc {
+    @media (min-width: $desktop-width) {
+        font-size: 50px;
+        line-height: 68px;
+        margin-top: 0;
+        margin-left: 140px;
+        margin-bottom: 51px;
+    }
+    @media (max-width: 659px) {
+        display: none;
+    }
+    font-family: inherit;
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+    margin-left: 20px;
+    margin-top: 90px;
+    color: white;
+    font-weight: normal;
+    font-size: 40px;
+}
+.header__download {
+    @media (min-width: $tablet-width) {
+        background-color: transparent;
+        width: 300px;
+        align-items: center;
+        padding-top: 39px;
+        margin-left: 20px;
+    }
+    @media (min-width: $desktop-width) {
+        padding-top: 20px;
+        margin-left: 130px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 48px;
+    padding-bottom: 38px;
+    margin: 0;
+    min-height: 271px;
+    background-color: #1D2631;
+}
+.download-apps {
+    @media (min-width: $tablet-width) {
+        width: 300px;
+        height: 55px;
+        margin-bottom: 40px;
+    }
+    @media (min-width: $desktop-width) {
+        margin-bottom: 67px;
+    }
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: white;
+    display: block;
+    width: 280px;
+    height: 55px;
+    left: 20px;
+    top: 749px;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 29px;
+    margin-top: -16px;
+}
+.download-apps span{
+    display: block;
+    font-size: 18px;
+    margin: 14px 35px;
+}
+
+.download-logo__android{
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+.download-logo {
+    @media (min-width: $tablet-width) {
+        margin-bottom: 35px;
+    }
+    @media (min-width: $desktop-width) {
+        margin-bottom: 48px;
+    }
+}
+.download-text {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+}
